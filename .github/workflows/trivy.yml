@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  trivy:
     name: Build
     runs-on: ubuntu-18.04
     steps:
