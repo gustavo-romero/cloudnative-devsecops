@@ -19,6 +19,7 @@ jobs:
         id: scan
         with:
           image: "devsecops/vulnerableapp:latest"
+          fail-build: false
           acs-report-enable: true
       - name: upload Anchore scan SARIF report
         uses: github/codeql-action/upload-sarif@v1
