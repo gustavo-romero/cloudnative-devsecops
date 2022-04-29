@@ -1,6 +1,7 @@
-name: build
+name: Scan Infrastructure as Code
 on:
   pull_request:
+
 jobs:
   build:
     name: Build
@@ -15,7 +16,6 @@ jobs:
           scan-type: 'config'
           hide-progress: false
           format: 'table'
-          exit-code: '1'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
 
