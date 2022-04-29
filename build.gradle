@@ -65,7 +65,7 @@ jib {
     	  image = 'openjdk:8-jre-alpine'
   	}
   	to {
-    	  image = 'sasanlabs/owasp-vulnerableapp:unreleased'
+    	  image = 'devsecops/vulnerableapp:latest'
   	}
 }
 
