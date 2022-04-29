@@ -19,7 +19,6 @@ jobs:
         id: scan
         with:
           image: "devsecops/vulnerableapp:latest"
-          fail-build: true
           severity-cutoff: critical
           acs-report-enable: true
       - name: upload Anchore scan SARIF report
