@@ -14,7 +14,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Build the Container image
-        run: sudo ./gradlew jibDockerBuild
+        run: sudo sh gradlew jibDockerBuild
       - uses: anchore/scan-action@v3
         id: scan
         with:
