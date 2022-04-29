@@ -1,0 +1,20 @@
+name: Scan container image
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Container image
+        run: sudo ./gradlew jibDockerBuild
+      - uses: anchore/scan-action@v3
+        id: scan
+        with:
+          image: "devsecops/vulnerableapp:latest"
+          fail-build: true
+          severity-cutoff: critical
+          acs-report-enable: true
+      - name: upload Anchore scan SARIF report
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
