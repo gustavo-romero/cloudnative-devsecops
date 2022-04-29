@@ -6,8 +6,8 @@ permissions:
   pull-requests: write
 
 on: 
-workflow_dispatch:
-pull_request_target:
+  workflow_dispatch:
+  pull_request_target:
 jobs:
   build:
     runs-on: ubuntu-latest
