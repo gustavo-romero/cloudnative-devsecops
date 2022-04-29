@@ -1,4 +1,10 @@
 name: Scan container image
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
 on: [pull_request]
 jobs:
   build:
